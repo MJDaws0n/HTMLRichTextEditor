@@ -61,26 +61,181 @@ function appendEditor(input){
     newEditor.append(input);
     input.type='hidden'
 
-    // Create the textarea
-    const contentField = document.createElement('textarea');
+    // Create the textarea as an editiable div
+    const contentField = document.createElement('div');
+    contentField.setAttribute('contenteditable', 'true');
+    contentField.classList.add('textarea');
     contentField.addEventListener('input', ()=>{
-        input.value = contentField.value;
+        input.value = contentField.innerHTML;
         input.dispatchEvent(new Event('change'));
         input.dispatchEvent(new Event('input'));
     })
+    
+    // Set the default value
+    contentField.innerHTML = input.value;
 
     // Create the menu bar
     const menuBar = document.createElement('div');
     menuBar.classList.add('menuBar');
 
-
-    // Example button
-    const testButton = document.createElement('button');
-    testButton.textContent = 'Bold';
-
-    menuBar.append(testButton);
+    // Bold
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/bold-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('bold');
+        })
+    
+        menuBar.append(button);
+    }
+    // Italic
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/italic-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('italic');
+        })
+    
+        menuBar.append(button);
+    }
+    // Underline
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/underline-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('underline');
+        })
+    
+        menuBar.append(button);
+    }
+    // Strikethrough
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/strikethrough-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('strikethrough');
+        })
+    
+        menuBar.append(button);
+    }
+    // Clear format
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/xmark-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('removeFormat');
+        })
+    
+        menuBar.append(button);
+    }
+    // Left align
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/align-left-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('justifyLeft');
+        })
+    
+        menuBar.append(button);
+    }
+    // Center align
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/align-center-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('justifyCenter');
+        })
+    
+        menuBar.append(button);
+    }
+    // Right align
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/align-right-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('justifyRight');
+        })
+    
+        menuBar.append(button);
+    }
+    // Justify align
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/align-justify-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('justifyFull');
+        })
+    
+        menuBar.append(button);
+    }
+    // Ordered list
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/list-ol-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('insertOrderedList');
+        })
+    
+        menuBar.append(button);
+    }
+    // Unordered list
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/list-ul-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('insertUnorderedList');
+        })
+    
+        menuBar.append(button);
+    }
+    // Undo
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/rotate-left-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            document.execCommand('undo');
+        })
+    
+        menuBar.append(button);
+    }
+    // Redo
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/rotate-right-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            document.execCommand('redo');
+        })
+    
+        menuBar.append(button);
+    }
+    // Create URL
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/link-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            const url = prompt('Enter the URL:');
+            if (url) {
+              execCmd('createLink', url);
+            }
+        })
+    
+        menuBar.append(button);
+    }
+    // Unlink
+    {
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="./icons/link-slash-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('unlink');
+        })
+    
+        menuBar.append(button);
+    }
 
     // Append the elements in the correct order
     newEditor.append(menuBar);
     newEditor.append(contentField);
+}
+function execCmd(command, value = null) {
+    document.execCommand(command, false, value);
 }
