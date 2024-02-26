@@ -12,27 +12,63 @@ div[data-advanced-edtior='true'] .textarea{
 
     resize: none;
 }
+div[data-advanced-edtior='true'] .menuBar button{
+    -webkit-appearance: none;
+    border-radius: 0;
+    text-align: inherit;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    color: inherit;
+    font: inherit;
+}
+div[data-advanced-edtior='true'] .menuBar select{
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+div[data-advanced-edtior='true'] .menuBar select option{
+    margin: 0;
+    padding: 0;
+}
+div[data-advanced-edtior='true'] .menuBar select:focus{
+    outline: none;
+}
 
 /* IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 div[data-advanced-edtior='true'] .textarea{
     resize: vertical;
-    border: 1px solid black;
-    width: 100%;
+    width: 98%;
     height: 200px;
     min-height: 100px;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 20px;
-}
-div[data-advanced-edtior='true'] .textarea:focus{
-    border: 1px solid black;
+    font-size: 15px;
+    margin: 1%;
 }
 div[data-advanced-edtior='true']{
     border: 2px solid black;
 }
 div[data-advanced-edtior='true'] .menuBar{
-    border: 1px solid black;
+    border-bottom: 1px solid black;
+}
+div[data-advanced-edtior='true'] .menuBar button{
+    padding: 15px;
+    float: left;
+}
+div[data-advanced-edtior='true'] .menuBar button img{
+    height: 20px;
+}
+div[data-advanced-edtior='true'] .menuBar select{
+    text-align: center;
+    height: 20px;
+}
+div[data-advanced-edtior='true'] .menuBar div{
+    padding: 15px;
+    float: left;
 }
