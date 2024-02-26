@@ -81,7 +81,7 @@ function appendEditor(input){
     // Bold
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/bold-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/bold-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('bold');
         })
@@ -91,7 +91,7 @@ function appendEditor(input){
     // Italic
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/italic-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/italic-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('italic');
         })
@@ -101,7 +101,7 @@ function appendEditor(input){
     // Underline
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/underline-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/underline-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('underline');
         })
@@ -111,7 +111,7 @@ function appendEditor(input){
     // Strikethrough
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/strikethrough-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/strikethrough-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('strikethrough');
         })
@@ -121,7 +121,7 @@ function appendEditor(input){
     // Clear format
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/xmark-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/xmark-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('removeFormat');
         })
@@ -131,7 +131,7 @@ function appendEditor(input){
     // Left align
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/align-left-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/align-left-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('justifyLeft');
         })
@@ -141,7 +141,7 @@ function appendEditor(input){
     // Center align
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/align-center-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/align-center-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('justifyCenter');
         })
@@ -151,7 +151,7 @@ function appendEditor(input){
     // Right align
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/align-right-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/align-right-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('justifyRight');
         })
@@ -161,7 +161,7 @@ function appendEditor(input){
     // Justify align
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/align-justify-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/align-justify-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('justifyFull');
         })
@@ -171,7 +171,7 @@ function appendEditor(input){
     // Ordered list
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/list-ol-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/list-ol-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('insertOrderedList');
         })
@@ -181,7 +181,7 @@ function appendEditor(input){
     // Unordered list
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/list-ul-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/list-ul-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('insertUnorderedList');
         })
@@ -230,7 +230,7 @@ function appendEditor(input){
     // Undo
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/rotate-left-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/rotate-left-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             document.execCommand('undo');
         })
@@ -240,7 +240,7 @@ function appendEditor(input){
     // Redo
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/rotate-right-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/rotate-right-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             document.execCommand('redo');
         })
@@ -250,7 +250,7 @@ function appendEditor(input){
     // Create URL
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/link-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/link-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             const url = prompt('Enter the URL:');
             if (url) {
@@ -263,7 +263,7 @@ function appendEditor(input){
     // Unlink
     {
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="./icons/link-slash-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/link-slash-solid.svg"></img>';
         button.addEventListener('click', ()=>{
             execCmd('unlink');
         })
