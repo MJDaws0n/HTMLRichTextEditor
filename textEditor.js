@@ -188,6 +188,46 @@ function appendEditor(input){
     
         menuBar.append(button);
     }
+    // Header type
+    {
+        const div = document.createElement('div');
+        const select = document.createElement('select');
+        select.innerHTML += `
+        <option value="h1">Heading 1</option>
+        <option value="h2">Heading 2</option>
+        <option value="h3">Heading 3</option>
+        <option value="h4">Heading 4</option>
+        <option value="h5">Heading 5</option>
+        <option value="h6">Heading 6</option>
+        <option value="p">Paragraph</option>
+        `;
+
+        select.value = 'p';
+
+        // Function to update the select dropdown based on the current formatting
+        function updateSelectDropdown() {
+            const currentFormat = document.queryCommandValue('formatBlock');
+            if(currentFormat == '' || currentFormat == 'div'){
+                select.value = 'p';
+            } else{
+                select.value = currentFormat;
+            }
+        }
+
+        // Listen for input or keyup events on the input section
+        contentField.addEventListener('input', updateSelectDropdown);
+        contentField.addEventListener('keyup', updateSelectDropdown);
+        contentField.addEventListener('click', updateSelectDropdown);
+        contentField.addEventListener('change', updateSelectDropdown);
+
+        select.addEventListener('change', (event)=>{
+            console.log(event.target.value);
+            execCmd('formatBlock', event.target.value)
+        })
+    
+        div.append(select);
+        menuBar.append(div);
+    }
     // Undo
     {
         const button = document.createElement('button');
