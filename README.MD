@@ -1,6 +1,19 @@
 # Web Based Text Editor
 This a basic web-based text editor written in HTML, CSS and JS
 
+## Including
+You can download the files and include with the following:
+```html
+<script src="textEditor.js"></script>
+<link rel="stylesheet" href="textEditor.css">
+```
+
+Or, optionaly, you can use the WebWorks CDN with:
+```html
+<script src="https://webworkshub.online/cdn/rich_text_editor/textEditor.js?ver=1.0"></script>
+<link rel="stylesheet" href="https://webworkshub.online/cdn/rich_text_editor/textEditor.css?ver=1.0">
+```
+
 ## Usage
 Simply use:
 ```HTML
