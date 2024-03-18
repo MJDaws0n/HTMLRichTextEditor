@@ -10,7 +10,7 @@ You can download the files and include with the following:
 
 Or, optionaly, you can use the WebWorks CDN with:
 ```html
-<script src="https://webworkshub.online/cdn/rich_text_editor/textEditor.js?ver=1.0"></script>
+<script src="https://webworkshub.online/cdn/rich_text_editor/textEditor.js?ver=1.0.2"></script>
 <link rel="stylesheet" href="https://webworkshub.online/cdn/rich_text_editor/textEditor.css?ver=1.0">
 ```
 
