@@ -29,20 +29,36 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     // Callback function to execute when mutations are observed
     const callback = function(mutationsList, observer) {
-        for(const mutation of mutationsList) {
+        for (const mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 mutation.addedNodes.forEach(node => {
+                    // Function to traverse through the descendants of a node
+                    const traverseDescendants = (element) => {
+                        if (element.nodeType === 1 && element.tagName.toLowerCase() === 'input' && element.getAttribute('type') === 'advancedEditor') {
+                            appendEditor(element);
+                        } else {
+                            // Check descendants
+                            element.childNodes.forEach(child => {
+                                traverseDescendants(child);
+                            });
+                        }
+                    };
+                    
+                    // Check if the added node itself is an input with advancedEditor type
                     if (node.nodeType === 1 && node.tagName.toLowerCase() === 'input' && node.getAttribute('type') === 'advancedEditor') {
                         appendEditor(node);
+                    } else {
+                        // Check descendants
+                        traverseDescendants(node);
                     }
                 });
             }
         }
     };
-
+    
     // Create an observer instance linked to the callback function
     const observer = new MutationObserver(callback);
-
+    
     // Start observing the target node for configured mutations
     observer.observe(targetNode, config);
 })
