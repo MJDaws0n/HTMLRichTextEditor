@@ -1,16 +1,71 @@
+const debug = new URLSearchParams(window.location.search).get('debug') === 'true';
+
 // Load jquery
 if (typeof jQuery === 'undefined') {
     var script = document.createElement('script');
     script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
 
     script.onload = function() {
-        console.log('jQuery is loaded!');
+        debug && console.log('jQuery is loaded!');
     };
 
     document.head.appendChild(script);
 } else {
     // jQuery is already loaded
-    console.log('jQuery is already loaded!');
+    debug && console.log('jQuery is already loaded!');
+}
+// Load Sweetalert2
+if (typeof swal === 'undefined') {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js';
+
+    script.onload = function() {
+        debug && console.log('Sweetalert2 script is loaded!');
+    };
+
+    document.head.appendChild(script);
+
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css';
+
+    link.onload = function() {
+        debug && console.log('Sweetalert2 styles are loaded!');
+    };
+
+    document.head.appendChild(link);
+} else {
+    // Sweetalert2 is already loaded
+    debug && console.log('Sweetalert2 is already loaded!');
+}
+// Load Coloris
+if (typeof swal === 'undefined') {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js';
+
+    script.onload = function() {
+        debug && console.log('Coloris script is loaded!');
+
+        Coloris({
+            themeMode: 'dark',
+            alpha: false
+        });
+    };
+
+    document.head.appendChild(script);
+
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css';
+
+    link.onload = function() {
+        debug && console.log('Coloris styles are loaded!');
+    };
+
+    document.head.appendChild(link);
+} else {
+    // Sweetalert2 is already loaded
+    debug && console.log('Coloris is already loaded!');
 }
 
 // Code for checking for new and old editors
@@ -268,7 +323,8 @@ function appendEditor(input){
         const button = document.createElement('button');
         button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/fill-drip-solid.svg"></img>';
         button.addEventListener('click', ()=>{
-            execCmd('hiliteColor', '#ff0000');
+            const colour = menuBar.querySelector('.colourCircle').style.backgroundColor;
+            execCmd('hiliteColor', colour);
         })
     
         menuBar.append(button);
@@ -277,8 +333,51 @@ function appendEditor(input){
     {    
         const button = document.createElement('button');
         button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/fill-solid.svg"></img>';
+        
         button.addEventListener('click', ()=>{
             execCmd('hiliteColor', '#00000000');
+        })
+    
+        menuBar.append(button);
+    }
+    // Text Colour
+    {    
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/paintbrush-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            const colour = menuBar.querySelector('.colourCircle').style.backgroundColor;
+            execCmd('foreColor', colour);
+        })
+    
+        menuBar.append(button);
+    }
+    // Text Colour Clear
+    {    
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/paintbrush.svg"></img>';
+        
+        button.addEventListener('click', ()=>{
+            execCmd('foreColor', '#00000000');
+        })
+    
+        menuBar.append(button);
+    }
+    // Colour
+    {    
+        const button = document.createElement('button');
+        button.innerHTML = '<span class="colourCircle" style="background-color: #00ff00"></span>';
+        
+        button.addEventListener('click', ()=>{
+            button.id = 'colourSelector';
+            // Custom menu
+            Swal.fire({
+                title: "Background colour",
+                html: `<input type="text" data-coloris id="inputColour" onInput="document.querySelector('#colourSelector').children[0].style.backgroundColor = event.target.value">`,
+                showCloseButton: true,
+                confirmButtonText: 'Done',
+            }).then(() => {
+                button.id = '';
+            });
         })
     
         menuBar.append(button);
