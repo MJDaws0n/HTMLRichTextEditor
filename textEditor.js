@@ -263,6 +263,15 @@ function appendEditor(input){
     
         menuBar.append(button);
     }
+    {    
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/fill-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('insertOrderedList');
+        })
+    
+        menuBar.append(button);
+    }    
     // Create URL
     {
         const button = document.createElement('button');
