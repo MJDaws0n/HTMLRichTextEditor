@@ -263,15 +263,26 @@ function appendEditor(input){
     
         menuBar.append(button);
     }
+    // Background Colour
+    {    
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/fill-drip-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            execCmd('hiliteColor', '#ff0000');
+        })
+    
+        menuBar.append(button);
+    }
+    // Background Clear
     {    
         const button = document.createElement('button');
         button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/BasicWebTextEditor/main/icons/fill-solid.svg"></img>';
         button.addEventListener('click', ()=>{
-            execCmd('insertOrderedList');
+            execCmd('hiliteColor', '#00000000');
         })
     
         menuBar.append(button);
-    }    
+    }  
     // Create URL
     {
         const button = document.createElement('button');
