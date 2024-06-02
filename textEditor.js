@@ -332,7 +332,7 @@ function appendEditor(input){
     // Background Clear
     {    
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/fill-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/fill.svg"></img>';
         
         button.addEventListener('click', ()=>{
             execCmd('hiliteColor', '#00000000');
