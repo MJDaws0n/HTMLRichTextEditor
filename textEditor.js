@@ -321,7 +321,7 @@ function appendEditor(input){
     // Background Colour
     {    
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/fill-drip-solid.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/paint-roller.svg"></img>';
         button.addEventListener('click', ()=>{
             const colour = menuBar.querySelector('.colourCircle').style.backgroundColor;
             execCmd('hiliteColor', colour);
@@ -332,7 +332,7 @@ function appendEditor(input){
     // Background Clear
     {    
         const button = document.createElement('button');
-        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/fill.svg"></img>';
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/paint-roller-thin.svg"></img>';
         
         button.addEventListener('click', ()=>{
             execCmd('hiliteColor', '#00000000');
@@ -357,7 +357,29 @@ function appendEditor(input){
         button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/paintbrush.svg"></img>';
         
         button.addEventListener('click', ()=>{
-            execCmd('foreColor', '#00000000');
+            execCmd('foreColor', '#000000');
+        })
+    
+        menuBar.append(button);
+    }
+    // Block Background Colour
+    {    
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/fill-solid.svg"></img>';
+        button.addEventListener('click', ()=>{
+            const colour = menuBar.querySelector('.colourCircle').style.backgroundColor;
+            execCmd('hiliteColor', colour);
+        })
+    
+        menuBar.append(button);
+    }
+    // Block Background Clear
+    {    
+        const button = document.createElement('button');
+        button.innerHTML = '<img width="15" src="https://raw.githubusercontent.com/MJDaws0n/HTMLRichTextEditor/main/icons/fill.svg"></img>';
+        
+        button.addEventListener('click', ()=>{
+            execCmd('hiliteColor', '#00000000');
         })
     
         menuBar.append(button);
