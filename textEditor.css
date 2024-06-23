@@ -61,6 +61,9 @@ div[data-advanced-edtior='true'] .menuBar button{
     padding: 15px;
     float: left;
 }
+div[data-advanced-edtior='true'] .menuBar button.active{
+    background-color: rgba(0, 0, 0, 0.089);
+}
 div[data-advanced-edtior='true'] .menuBar button img{
     height: 20px;
 }
@@ -81,4 +84,20 @@ div[data-advanced-edtior='true'] .menuBar div{
     border-radius: 50%;
     display: inline-block;
     border: 1px solid black;
+}
+
+
+
+/* EditorStyles */
+.ad-bold{
+    font-weight: bold;
+}
+.ad-bold-off{
+    font-weight: initial;
+}
+.ad-italic{
+    font-style: italic;
+}
+.ad-italic-off{
+    font-style: initial;
 }
