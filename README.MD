@@ -1,3 +1,7 @@
+# Outdated
+Take a look at my [new one](https://github.com/MJDaws0n/Rich-Text-Editor) - much better
+https://github.com/MJDaws0n/Rich-Text-Editor
+
 # Web Based Text Editor
 This a basic web-based text editor written in HTML, CSS and JS
 
